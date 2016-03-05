@@ -18,7 +18,7 @@ Trading Office is reference implementation of microservices architecture, based 
 
 Heroku: http://counterparty-service.herokuapp.com/swagger-ui.html
 
-![Component Diagram](https://raw.githubusercontent.com/spolnik/trading-office/master/design/counterparty_service.png)
+![Component Diagram](https://raw.githubusercontent.com/spolnik/trading-office-counterparty-service/master/design/counterparty_service.png)
 
 ## Notes
 - checking if [dependencies are up to date](https://www.versioneye.com/user/projects/56ad39427e03c7003ba41427)
