@@ -31,26 +31,21 @@ dependencyManagement {
     }
 }
 
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+apply from: "$rootDir/gradle/jacoco.gradle"
+apply plugin: 'spring-boot'
+
 repositories {
     mavenLocal()
-    maven {
-        url "http://repo1.maven.org/maven2"
-        artifactUrls "https://repository.jboss.org/nexus/content/groups/public"
-    }
     jcenter()
-    maven { url "http://repository.springsource.com/maven/bundles/external" }
     maven {
         url 'http://repo.spring.io/milestone'
     }
 }
-
-apply plugin: 'java'
-apply plugin: 'idea'
-
-apply from: "$rootDir/gradle/jacoco.gradle"
-
-
-sourceCompatibility = 1.8
 
 test {
     testLogging {
@@ -58,9 +53,6 @@ test {
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
 }
-
-
-apply plugin: 'spring-boot'
 
 dependencies {
     compile libs.spring.boot_web,

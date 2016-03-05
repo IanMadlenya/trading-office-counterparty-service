@@ -6,24 +6,6 @@ before_install:
 after_success:
 - codecov
 - ./gradlew sonarqube
-env:
-  global:
-  - secure: A+JodfRzulrwez5TVSm2k1SQPxsis68gM22JN4nqjm4RgekfHnfWe5OoLYhdFuhgyzkUE7AnmkhcZCtYpl4/hCtRs4pZ+Hum4vtSh99dLaMOW3CpUzaBpWPtCcuEN2DP3v8hMAkbqiaSEYxfKM94CH3Ct+YH8xuaMvcYsuBRaFz2KSJXnfor+111VGGjoDSRFqMd6cpq4m0U22vUtyCBVeu8+HPRn3ySyafL7hNCBNyZgkp1KZZPD6RgzHPbjVKA9lBO27CnSBsp3uWHv5Zfee80JFsjIECRhR5djYI/mq3xtWTsdnIOTEjiT8ahwpxJBrAscapt8iTmZolaYLoe97JLFcU4qQLQGsdg6SRcCbpiTFyu7oMqcApxdb+6er9I5B4XVN329xpTZLYsMFZAzeqhZswYxAJiRPIzS79y/WFBNMwlHPHYZauAMZTPiWK/+8sr3hyrtSyuzMms3puBAAvjfDKWI4QOIoVMUxp+O3gTHi29/UpegFwgEOMYXd2CspQROx76zq0G5xGeGK5FSRnvaE27VKPKlBdyE9DT8AZxy1sP9pigHCt4E/dV+4lM5awCCCqCVP5//yFrCFiTb0vINkZjYOhuaqckkAeKRa8/yZnGeXbZ4ENL+ZqVL/PnOdqd4jCS3uTSuW2s4N5AC7bXtCuHtiEWNj/siEzndE0=
-addons:
-  coverity_scan:
-    project:
-      name: spolnik/trading-office
-      version: 1.0
-      description: Trading Office
-    notification_email: jacek.spolnik@gmail.com
-    build_command_prepend: ./gradlew clean
-    build_command: ./gradlew compileJava
-    branch_pattern: coverity_scan
-branches:
-  only:
-  - master
-  - /^heroku-.*$/
-  - coverity_scan
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
@@ -33,7 +15,8 @@ cache:
 deploy:
   provider: heroku
   api_key:
-    secure: Q122cIpez64zhpBgPi0GMdgwVoplo8onT59jJD+zCpgzi1az3Fx1748i1BLSDZCi/rZDVyK0Y14WwAU0uELx/VSYDWrGxJnpyD5EH7tg2NHRtbIOAXk1gIxwEk8jZr2tFvJIEFS2rljlI+ZMrMc3ikp86hnVA8KVoDrfpQaiEB9igI9C4+gUA2Q4UaepR1rNReYOq+H/OLhHxNOSigrQylsPLJjzUTpKewMdAydLa1L6UiST85eU67lY83RmEQaPCY6XrJ5OTHGFG4dxIiR/ahUk1AbW5uBo2cIy3NNdTMcd1J9sXgU/xSUsRB3QwUbV/+uKVxVXPGW/kdDje04CC35HynuVVYnDiG3F0THTjDjv2Q6wPxDOs5nVwB/ivF/NAQ68MRVPuPeizbl/5Hh66kPPxL2DqL+s8KEluNDzq1SgZeYwkX+9629Ap/rrmPZ4ddunnaWeOVCaOD/hQbOPUVCBwKng+x7eWjX5MluQf4kjmRDR9Jg/qnXuxFiVF2ad7PPUA5kVIsnj6OkUXK32zITkpkT8b5+BDjrub2nzFm1qwyXwm+ru5c7wuQzK4gMOV0CcXFr5CdwaXQxPeMR5M3p0F2dHMP1b2lZqvyYxARptoUOcDb+vZ4r5HW4oSPDChhLOxxhgkmITtqGVaPoDxJ7ulqiT0ukWNBRdfiuXVTA=
-  app: counterparty-service
+    secure: IraRe693JiCGgGolWK88bOuCVcLeLSb7h6B4/hYuG3MEGrvyKxnROuDkkF5XqzHB6B3evYAPK1gPkdF2x7Tzow/yAHc+ITygRX5DOr6aC/fQEgoOCEsdKPQGpgcz4MBAOayIPChpcdLqJGhdReRIc7XGKNMu2cy6Pwa5uI8OLnJVG0dNiQXP3da40L+XGi5UKRr7EULadkKpUDBVTmsZ+r4y5oBlTAIjcOpoXcxldmusCCUG6srPxRfD1OEZQJbFa2E/qSCiyLVgBSyImsgPLS/4Mp0FqoDfoVYNWorgd26OPQZE08SQ06x8Ws8Yd3CDjmTryu6tBB08k82Fe43LZGAaw15CRrRVV8Vv+pSicVx/Yu8oWykxKsInSyn2TWaE/wFO4ahXAXMMeIw7Yl/El/k1FUqj5Ywew3lMP1xuqBiVj+vmgezm8PN8nc0URSAF18wJsjI4gyxTDwn2x7LHP/WAQCFW77hHCBNCepO1ieqFdK2BACFlrcUSaKT6lNc5cQs7N49AqXV3+AAiLR93S750AMd/LmZmN1Oeq9ym7snN8+dRugKEceMdfIxPn7tUmd8TMve7beh/CLy0moR1q9OLvPApz0L9SVJUUUsjJL6ZU8HTeWyb8RsJtBWtH3K0v0ENg9zsqxxHFSnNIHHjNmynyJAtkGoShvNi/3X9w10=
+  app: counterparty-service-staging
+  skip_cleanup: true
   on:
     repo: spolnik/trading-office-counterparty-service
