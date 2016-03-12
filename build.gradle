@@ -19,7 +19,7 @@ sonarqube {
     properties {
         property "sonar.host.url", "https://sonar-nprogramming.rhcloud.com"
         property "sonar.projectKey", "trading-office-counterparty-service"
-        property "sonar.projectName", "Trading Office Counterparty Service"
+        property "sonar.projectName", "Trading Office - Counterparty Service"
     }
 }
 
