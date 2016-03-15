@@ -1,3 +1,6 @@
+server:
+  port: 9008
+
 eureka:
   client:
     serviceUrl:
