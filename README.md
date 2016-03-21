@@ -21,6 +21,5 @@ Heroku: http://counterparty-service.herokuapp.com/swagger-ui.html
 ![Component Diagram](https://raw.githubusercontent.com/spolnik/trading-office-counterparty-service/master/design/counterparty_service.png)
 
 ## Notes
-- checking if [dependencies are up to date](https://www.versioneye.com/user/projects/56ad39427e03c7003ba41427)
 - installing RabbitMQ locally (to run end to end test locally) - [instructions](https://www.rabbitmq.com/download.html)
 - to run on Mac OS X - /usr/local/sbin/rabbitmq-server 
